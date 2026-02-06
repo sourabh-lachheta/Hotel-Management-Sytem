@@ -32,7 +32,7 @@ public class Login extends JFrame implements ActionListener {
         passwordField1.setFont(new Font("CG Omega",Font.PLAIN,19));
         add(passwordField1);
 
-        ImageIcon imageIcon = new ImageIcon(ClassLoader.getSystemResource("icon/bbb.jpeg"));
+        ImageIcon imageIcon = new ImageIcon(ClassLoader.getSystemResource("icon/tt.jpeg"));
         Image i2 = imageIcon.getImage().getScaledInstance(583,470,Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         JLabel label = new JLabel(i3);
@@ -77,6 +77,7 @@ public class Login extends JFrame implements ActionListener {
                 ResultSet resultSet = c.statement.executeQuery(q);
 
                 if(resultSet.next()){
+                    new DashBoard();
                     setVisible(false);
                 }else{
                     JOptionPane.showMessageDialog(null, "Invalid");

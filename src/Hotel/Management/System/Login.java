@@ -68,8 +68,8 @@ public class Login extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == b1){
-           /* try{
-                Con c = new Con();
+            try{
+                Temp c = new Temp();
                 String user = textField1.getText();
                 String pass = passwordField1.getText();
 
@@ -85,7 +85,7 @@ public class Login extends JFrame implements ActionListener {
 
             }catch(Exception E){
                 E.printStackTrace();
-            }*/
+            }
 
         }else{
             System.exit(102);

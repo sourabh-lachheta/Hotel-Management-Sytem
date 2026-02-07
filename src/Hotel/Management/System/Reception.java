@@ -178,6 +178,11 @@ public class Reception extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e){
                 try{
+                    if(e.getSource() == logOut){
+                        new Login();
+                        setVisible(false);
+
+                    }
 
                 }catch(Exception E){
                     E.printStackTrace();

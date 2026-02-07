@@ -194,6 +194,8 @@ public class Reception extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e){
                 try{
+                    new DashBoard();
+                    setVisible(false);
 
                 }catch(Exception E){
                     E.printStackTrace();

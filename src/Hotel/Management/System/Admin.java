@@ -60,11 +60,6 @@ public class Admin extends JFrame implements ActionListener {
         back.addActionListener(this);
         add(back);
 
-
-
-
-
-
         setLayout(null);
         setLocation(100,80);
         setSize(1700,900);
@@ -79,6 +74,7 @@ public class Admin extends JFrame implements ActionListener {
 
 
             }else if(e.getSource() == roomB){
+                new AddRoom();
 
             }else if(e.getSource() == driverB){
 

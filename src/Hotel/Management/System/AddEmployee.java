@@ -2,10 +2,12 @@ package Hotel.Management.System;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class AddEmployee extends JFrame {
-    JTextField H,name,age,salary,phone,aadhar,email;
-    JButton save,back;
+public class AddEmployee extends JFrame implements ActionListener {
+    JTextField name,age,salary,phone,aadhar,email;
+    JButton b1,b2;
     JRadioButton genderM, genderF;
     JComboBox job;
 
@@ -22,10 +24,10 @@ public class AddEmployee extends JFrame {
         Name.setFont(new Font("GC Omega",Font.BOLD,20));
         add(Name);
 
-        H = new JTextField();
-        H.setBounds(500,170,300,30);
-        H.setFont(new Font("GC Omega",Font.BOLD,18));
-        add(H);
+        name = new JTextField();
+        name.setBounds(500,170,300,30);
+        name.setFont(new Font("GC Omega",Font.BOLD,18));
+        add(name);
 
 
         JLabel Age  = new JLabel("Age");
@@ -105,6 +107,18 @@ public class AddEmployee extends JFrame {
         email.setFont(new Font("GC Omega",Font.BOLD,18));
         add(email);
 
+        b1 = new JButton("Save");
+        b1.setBounds(250,670,100,30);
+        b1.setFont(new Font("GC Omega",Font.BOLD,15));
+       b1.addActionListener(this);
+        add(b1);
+
+        b2 = new JButton("Back");
+        b2.setBounds(400,670,100,30);
+        b2.setFont(new Font("GC Omega",Font.BOLD,15));
+        b2.addActionListener(this);
+        add(b2);
+
 
 
 
@@ -116,6 +130,33 @@ public class AddEmployee extends JFrame {
         getContentPane().setBackground(new Color(155,135,66,85));
         setVisible(true);
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource() == b1){
+            try{
+                Temp c = new Temp();
+                String N1 = name.getText();
+                String A = age.getText();
+                String status = (String)cs.getSelectedItem();
+                String price = P.getText();
+                String bed = (String)bt.getSelectedItem();
+
+                String q = "insert into room values( '"+room+"','"+ava+"','"+status+"', '"+price+"', '"+bed+"')";
+                c.statement.executeUpdate(q);
+
+                JOptionPane.showMessageDialog(null,"Room Successfully Added");
+                setVisible(false);
+
+            }catch(Exception E){
+                E.printStackTrace();
+            }
+
+        }else{
+            new Admin();
+            setVisible(false);
+        }
     }
     public static void main(String[] args){
         new AddEmployee();

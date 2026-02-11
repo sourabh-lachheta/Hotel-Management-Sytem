@@ -71,10 +71,14 @@ public class Admin extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e){
         try{
             if (e.getSource() == empB) {
+                new AddEmployee();
+                //setVisible(false);
+
 
 
             }else if(e.getSource() == roomB){
                 new AddRoom();
+                //setVisible(false);
 
             }else if(e.getSource() == driverB){
 

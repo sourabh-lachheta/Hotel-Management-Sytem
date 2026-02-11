@@ -48,13 +48,13 @@ public class AddEmployee extends JFrame implements ActionListener {
         genderM = new JRadioButton("male");
         genderM.setBounds(500,290,100,30);
         genderM.setFont(new Font("GC Omega",Font.BOLD,18));
-        genderM.setBackground(new Color(155,135,66,85));
+       // genderM.setBackground(new Color(155,135,66,85));
         add(genderM);
 
         genderF = new JRadioButton("Female");
         genderF.setBounds(620,290,100,30);
         genderF.setFont(new Font("GC Omega",Font.BOLD,18));
-        genderF.setBackground(new Color(155, 135, 66,85));
+       // genderF.setBackground(new Color(155, 135, 66,85));
         add(genderF);
 
         JLabel Job  = new JLabel("Job");
@@ -120,10 +120,18 @@ public class AddEmployee extends JFrame implements ActionListener {
         add(b2);
 
 
+        ImageIcon imageIcon = new ImageIcon(ClassLoader.getSystemResource("icon/addemp.png"));
+        Image i1 = imageIcon.getImage().getScaledInstance(500,500,Image.SCALE_DEFAULT);
+        ImageIcon i2 = new ImageIcon(i1);
+        JLabel label = new JLabel(i2);
+        label.setBounds(1000,140,500,500);
+        add(label);
 
 
 
 
+
+        setUndecorated(true);
         setLayout(null);
         setLocation(100,80);
         setSize(1700,900);
@@ -139,14 +147,23 @@ public class AddEmployee extends JFrame implements ActionListener {
                 Temp c = new Temp();
                 String N1 = name.getText();
                 String A = age.getText();
-                String status = (String)cs.getSelectedItem();
-                String price = P.getText();
-                String bed = (String)bt.getSelectedItem();
+                String S = salary.getText();
+                String P = phone.getText();
+                String AA = aadhar.getText();
+                String J = (String)job.getSelectedItem();
+                String E = email.getText();
+                String G = null;
+                if(genderM.isSelected()){
+                    G = "male";
+                }else if (genderF.isSelected()){
+                    G = "Female";
+                }
 
-                String q = "insert into room values( '"+room+"','"+ava+"','"+status+"', '"+price+"', '"+bed+"')";
+
+                String q = "insert into employee values( '"+N1+"','"+A+"','"+G+"', '"+J+"', '"+S+"','"+P+"','"+AA+"', '"+E+"')";
                 c.statement.executeUpdate(q);
 
-                JOptionPane.showMessageDialog(null,"Room Successfully Added");
+                JOptionPane.showMessageDialog(null,"Employee Successfully Added");
                 setVisible(false);
 
             }catch(Exception E){
@@ -155,7 +172,7 @@ public class AddEmployee extends JFrame implements ActionListener {
 
         }else{
             new Admin();
-            setVisible(false);
+            //setVisible(false);
         }
     }
     public static void main(String[] args){

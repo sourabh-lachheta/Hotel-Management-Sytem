@@ -85,7 +85,7 @@ public class Admin extends JFrame implements ActionListener {
 
             }else if(e.getSource() == logOut){
                 //System.exit(102);
-                new Login();
+                new Login2();
                 setVisible(false);
 
             }else{

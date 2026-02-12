@@ -70,7 +70,7 @@ public class DashBoard extends JFrame implements ActionListener {
             setVisible(false);
 
         }else{
-            new Admin();
+            new Login2();
             setVisible(false);
 
         }

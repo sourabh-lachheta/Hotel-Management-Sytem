@@ -76,11 +76,11 @@ public class Login2 extends JFrame implements ActionListener {
                 String user = textField1.getText();
                 String pass = passwordField1.getText();
 
-                String q = "select * from login where username = '"+user+"' and password = '"+pass+"'";
+                String q = "select * from login2 where user_name = '"+user+"' and password = '"+pass+"'";
                 ResultSet resultSet = c.statement.executeQuery(q);
 
                 if(resultSet.next()){
-                    new DashBoard();
+                    new Admin();
                     setVisible(false);
                 }else{
                     JOptionPane.showMessageDialog(null, "Invalid");
@@ -92,7 +92,8 @@ public class Login2 extends JFrame implements ActionListener {
             }
 
         }else{
-            System.exit(102);
+            new DashBoard();
+            setVisible(false);
 
         }
 

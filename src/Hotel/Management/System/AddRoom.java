@@ -130,7 +130,8 @@ public class AddRoom extends JFrame implements ActionListener {
             }
 
         }else{
-            new Admin();
+            //new Admin();
+            setVisible(false);
 
         }
 

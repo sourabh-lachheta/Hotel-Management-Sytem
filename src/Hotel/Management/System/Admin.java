@@ -81,6 +81,7 @@ public class Admin extends JFrame implements ActionListener {
                 //setVisible(false);
 
             }else if(e.getSource() == driverB){
+                new AddDriver();
 
             }else if(e.getSource() == logOut){
                 //System.exit(102);

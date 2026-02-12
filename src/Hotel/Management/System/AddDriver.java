@@ -2,11 +2,14 @@ package Hotel.Management.System;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class AddDriver extends JFrame {
+public class AddDriver extends JFrame implements ActionListener {
 
     JTextField name, age, carC,salary,phone,location;
     JComboBox gender,available;
+    JButton b1,b2;
 
     AddDriver(){
 
@@ -104,6 +107,17 @@ public class AddDriver extends JFrame {
         label.setBounds(1000,140,500,500);
         add(label);
 
+        b1 = new JButton("Save");
+        b1.setBounds(250,670,100,30);
+        b1.setFont(new Font("GC Omega",Font.BOLD,15));
+        b1.addActionListener(this);
+        add(b1);
+
+        b2 = new JButton("Back");
+        b2.setBounds(400,670,100,30);
+        b2.setFont(new Font("GC Omega",Font.BOLD,15));
+        b2.addActionListener(this);
+        add(b2);
 
 
 
@@ -117,12 +131,46 @@ public class AddDriver extends JFrame {
 
 
 
+        setUndecorated(true);
         setLayout(null);
         setLocation(100,80);
         setSize(1700,900);
         getContentPane().setBackground(new Color(155,135,66,85));
         setVisible(true);
     }
+
+    @Override
+    public void actionPerformed(ActionEvent e){
+        if(e.getSource() == b1){
+            try{
+                Temp c = new Temp();
+                String N = name.getText();
+                String A = age.getText();
+                String CC = carC.getText();
+                String S = salary.getText();
+                String P = phone.getText();
+                String L = location.getText();
+                String G = (String)gender.getSelectedItem();
+                String Av = (String)available.getSelectedItem();
+
+                String q =  "insert into driver values( '"+N+"','"+A+"','"+G+"', '"+CC+"', '"+S+"','"+P+"','"+Av+"','"+L+"' )";
+                c.statement.executeUpdate(q);
+
+                JOptionPane.showMessageDialog(null,"driver Added ");
+                setVisible(false);
+
+            }catch(Exception E){
+                E.printStackTrace();
+            }
+
+        }else{
+            setVisible(false);
+
+        }
+
+    }
+
+
     public static void main(String[] args){
         new AddDriver();
     }

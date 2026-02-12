@@ -171,8 +171,7 @@ public class AddEmployee extends JFrame implements ActionListener {
             }
 
         }else{
-            new Admin();
-            //setVisible(false);
+            setVisible(false);
         }
     }
     public static void main(String[] args){

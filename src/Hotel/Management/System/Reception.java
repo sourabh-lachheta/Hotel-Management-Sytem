@@ -106,7 +106,7 @@ public class Reception extends JFrame {
 
         });
 
-        updateCheck = new JButton("Update check");
+        updateCheck = new JButton("Update check-in details");
         updateCheck.setBounds(70,280,370,30);
         updateCheck.setFont(new Font("GC Omega",Font.BOLD,15));
         add(updateCheck);
@@ -169,6 +169,8 @@ public class Reception extends JFrame {
             }
 
         });
+
+
 
         logOut = new JButton("Logout");
         logOut.setBounds(83,440,160,30);

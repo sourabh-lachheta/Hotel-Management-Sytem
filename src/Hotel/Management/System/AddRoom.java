@@ -58,6 +58,9 @@ public class AddRoom extends JFrame implements ActionListener {
         t4.setFont(new Font("GC Omega",Font.BOLD,20));
         add(t4);
 
+
+        
+
         P = new JTextField();
         P.setBounds(500,410,300,30);
         P.setFont(new Font("GC Omega",Font.BOLD,18));
@@ -67,6 +70,10 @@ public class AddRoom extends JFrame implements ActionListener {
         t5.setBounds(250,340,300,300);
         t5.setFont(new Font("GC Omega",Font.BOLD,20));
         add(t5);
+
+
+
+
 
         bt = new JComboBox(new String[] {"Single","Double"});
         bt.setBounds(500,470,300,30);

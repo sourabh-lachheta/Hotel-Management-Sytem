@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Reception extends JFrame {
-    JButton   room, allEmpInfo, customerInfo,managerInfo, checkOut, updateCheck, updateRoomStatus, pickUpS, searchRoom, logOut, back;
+    JButton   room,department, allEmpInfo, customerInfo,managerInfo, checkOut, updateCheck, updateRoomStatus, pickUpS, searchRoom, logOut, back;
 
     Reception(){
         JButton newCustomer = new JButton("New customer");
@@ -155,8 +155,25 @@ public class Reception extends JFrame {
 
         });
 
-        searchRoom = new JButton("Search room");
-        searchRoom.setBounds(70,400,370,30);
+        department = new JButton("Department");
+        department.setBounds(70,400,370,30);
+        department.setFont(new Font("GC Oemga",Font.BOLD,15));
+        add(department);
+        department.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                try{
+                    new Department();
+
+                }catch(Exception E){
+                    E.printStackTrace();
+                }
+            }
+
+        });
+
+        searchRoom = new JButton("Search Room");
+        searchRoom.setBounds(70,440,370,30);
         searchRoom.setFont(new Font("GC Oemga",Font.BOLD,15));
         add(searchRoom);
         searchRoom.addActionListener(new ActionListener(){
@@ -174,7 +191,7 @@ public class Reception extends JFrame {
 
 
         logOut = new JButton("Logout");
-        logOut.setBounds(83,440,160,30);
+        logOut.setBounds(83,490,160,30);
         logOut.setFont(new Font("GC Oemga",Font.BOLD,15));
         add(logOut);
         logOut.addActionListener(new ActionListener(){
@@ -195,7 +212,7 @@ public class Reception extends JFrame {
         });
 
         back = new JButton("Back");
-        back.setBounds(263,440,160,30);
+        back.setBounds(263,490,160,30);
         back.setFont(new Font("GC Oemga",Font.BOLD,15));
         add(back);
         back.addActionListener(new ActionListener(){

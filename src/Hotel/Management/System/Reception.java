@@ -84,6 +84,7 @@ public class Reception extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e){
                 try{
+                    new ManagerInfo();
 
                 }catch(Exception E){
                     E.printStackTrace();

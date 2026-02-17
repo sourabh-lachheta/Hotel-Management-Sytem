@@ -8,12 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
-public class Employee extends JFrame implements ActionListener {
+public class ManagerInfo extends JFrame implements ActionListener {
     JTable table;
     JButton b1;
     JLabel name,age,gender,job,salary,phone,aadhar,email;
 
-    Employee(){
+    ManagerInfo(){
 
         JPanel panel = new JPanel();
         panel.setLayout(null);
@@ -79,20 +79,13 @@ public class Employee extends JFrame implements ActionListener {
 
         try{
             Temp c = new Temp();
-            String empInfo = "select * from employee";
+            String empInfo = "select * from employee where job = 'Manger'";
             ResultSet resultset = c.statement.executeQuery(empInfo);
             table.setModel(DbUtils.resultSetToTableModel(resultset));
 
         }catch(Exception e){
             e.printStackTrace();
         }
-
-
-
-
-
-
-
 
         setUndecorated(true);
         setLayout(null);
@@ -110,6 +103,6 @@ public class Employee extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args){
-        new Employee();
+        new ManagerInfo();
     }
 }

@@ -103,11 +103,7 @@ public class SearchRoom extends JFrame implements ActionListener {
         }
 
 
-
-
-
-
-       //setUndecorated(true);
+        setUndecorated(true);
         setLayout(null);
         setLocation(700,150);
         setSize(1020,700);
@@ -119,7 +115,7 @@ public class SearchRoom extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == search){
             String q = "select * from room where bed_type = '"+choice.getSelectedItem()+"'";
-            String q1 = "select * from room where availability = 'Available' bed_type = '"+choice.getSelectedItem()+"'";
+            String q1 = "select * from room where availability = 'Available' And bed_type = '"+choice.getSelectedItem()+"'";
 
             try{
                 Temp c = new Temp();

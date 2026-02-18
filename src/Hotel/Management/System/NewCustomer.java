@@ -135,7 +135,7 @@ public class NewCustomer extends JFrame implements ActionListener {
 
 
 
-        //setUndecorated(true);
+        setUndecorated(true);
         setLayout(null);
         setLocation(700,150);
         setSize(1020,700);

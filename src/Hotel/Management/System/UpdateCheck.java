@@ -147,7 +147,9 @@ public class UpdateCheck extends JFrame  {
                     String s2 = textName.getText();
                     String s3 = textCin.getText();
                     String s4 = textAmount.getText();
-                    c.statement.executeUpdate("update customer set room = '"+s1+"',name = '"+s2+"'   ")
+                    c.statement.executeUpdate("update customer set room = '"+s1+"',name = '"+s2+"', checkintime = '"+s3+"', deposit = '"+s4+"'   ");
+                    JOptionPane.showMessageDialog(null,"Updated Successfully");
+                    setVisible(false);
 
 
                 }catch(Exception E){

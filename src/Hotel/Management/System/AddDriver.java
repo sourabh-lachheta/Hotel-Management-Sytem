@@ -59,7 +59,7 @@ public class AddDriver extends JFrame implements ActionListener {
         carC.setFont(new Font("GC Omega",Font.BOLD,18));
         add(carC);
 
-        JLabel Salary  = new JLabel("Salary");
+        JLabel Salary  = new JLabel("Car Name");
         Salary.setBounds(250,330,300,200);
         Salary.setFont(new Font("GC Omega",Font.BOLD,20));
         add(Salary);

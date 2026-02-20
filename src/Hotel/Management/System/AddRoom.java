@@ -48,7 +48,7 @@ public class AddRoom extends JFrame implements ActionListener {
         t3.setFont(new Font("GC Omega",Font.BOLD,20));
         add(t3);
 
-        cs = new JComboBox(new String[] {"Cleaned","Uncleaned"});
+        cs = new JComboBox(new String[] {"Cleaned","dirty"});
         cs.setBounds(500,350,300,30);
         cs.setFont(new Font("GC Omega",Font.BOLD,18));
         add(cs);
